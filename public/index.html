@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+  <!-- FontAwesome JS -->
+  <script defer src="assets/fontawesome/js/all.js"></script>
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="assets/plugins/tiny-slider/tiny-slider.css">
+
+  <!-- Theme CSS -->
+  <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+
+  <!-- Javascript -->
+  <script src="assets/plugins/popper.min.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+  <!--Page Specific JS - service & pricing -->
+  <script src="assets/js/pricing.js"></script>
+
+  <!--Page Specific JS - home -->
+  <script src="assets/plugins/tiny-slider/min/tiny-slider.js"></script>
+  <script src="assets/js/testimonials.js"></script>
+
+  <!--Page Specific JS - portfolio -->
+  <script type="text/javascript" src="assets/plugins/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/isotope.pkgd.min.js"></script>
+  <!-- -->
+  <script type="text/javascript" src="assets/js/isotope-custom.js"></script>
+
+  <!-- Page Specific JS - blog post -->
+  <script src="cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/js/blog.js"></script>
+
+  <!-- Dark Mode -->
+  <script src="assets/plugins/js-cookie.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+
+  <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+  <script src="assets/js/demo/style-switcher.js"></script>
+
+
+</body>
+
 </html>
