@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "quote": "Rangsey transformed our online presence with exceptional web development skills. We couldn't be happier!",
+    "author": {
+      "name": "Sok Srey",
+      "title": "Project Manager, ABC Tech",
+      "profileImage": "assets/images/clients/profile-1.png"
+    }
+  },
+  {
+    "id": 2,
+    "quote": "The mobile app developed by Rangsey exceeded our expectations. It's user-friendly and visually stunning!",
+    "author": {
+      "name": "Marina Sopheap",
+      "title": "Project Manager, XYZ Innovations",
+      "profileImage": "assets/images/clients/profile-2.png"
+    }
+  },
+  {
+    "id": 3,
+    "quote": "Rangsey's graphic design services brought our brand to life, making a remarkable impact on our marketing efforts.",
+    "author": {
+      "name": "Hak Vannak",
+      "title": "Product Manager, Future Designs",
+      "profileImage": "assets/images/clients/profile-3.png"
+    }
+  },
+  {
+    "id": 4,
+    "quote": "The content creation and marketing strategies provided by Rangsey were spot on. We experienced significant growth in engagement!",
+    "author": {
+      "name": "Ang Chant",
+      "title": "Product Manager, Creative Minds",
+      "profileImage": "assets/images/clients/profile-4.png"
+    }
+  },
+  {
+    "id": 5,
+    "quote": "Rangsey's attention to detail in both web and graphic design is remarkable. We couldn't be happier with the results!",
+    "author": {
+      "name": "Long Chanthavath",
+      "title": "Product Manager, Digital Dreams",
+      "profileImage": "assets/images/clients/profile-5.png"
+    }
+  },
+  {
+    "id": 6,
+    "quote": "Rangsey delivered everything on time and went above and beyond to ensure our success. Highly recommend!",
+    "author": {
+      "name": "Sen Masuth",
+      "title": "CTO, Tech Solutions",
+      "profileImage": "assets/images/clients/profile-6.png"
+    }
+  }
+]

@@ -1,0 +1,27 @@
+/* My Customized CSS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Khmer:wght@100..900&display=swap');
+
+
+/* start change root font */
+:root {
+  --bs-body-font-family: "Noto Serif Khmer", system-ui;
+}
+/* end change root font */
+
+
+/* start adding hr visibility */
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: var(--bs-border-width) solid;
+  opacity: 0.25;
+}
+body.dark-mode hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: var(--bs-border-width) solid;
+  opacity: 0.25;
+}
+/* end adding hr visibility */
