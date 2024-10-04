@@ -13,8 +13,8 @@ const useBlogPostSpecStore = defineStore("postSpecific", {
       try {
         const apiUrl =
           this.currentLanguage === "khm"
-            ? "/c/067f-de7a-4251-85e2"
-            : "/c/7c17-2a0f-4bf7-b108";
+            ? "https://dummyjson.com/c/067f-de7a-4251-85e2"
+            : "https://dummyjson.com/c/7c17-2a0f-4bf7-b108";
 
         const { data } = await axios.get(apiUrl);
 

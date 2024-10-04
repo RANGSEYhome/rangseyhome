@@ -12,8 +12,8 @@ const useTestsStore = defineStore("testimonials", {
       try {
         const apiUrl =
           this.currentLanguage === "khm"
-            ? "/c/a2b6-c5a0-4484-bf28"
-            : "/c/ebe8-59ec-419d-905d";
+            ? "https://dummyjson.com/c/a2b6-c5a0-4484-bf28"
+            : "https://dummyjson.com/c/ebe8-59ec-419d-905d";
 
         const { data } = await axios.get(apiUrl);
         // console.log(data);
