@@ -49,6 +49,7 @@ Install tiny-slider: npm install tiny-slider
 Install isotope-layout: npm install isotope-layout
 Install imagesloaded: npm install imagesloaded
 Install  highlight.js: npm install highlight.js
+Install date-fns: npm install date-fns
 
 # Use DummyJson for API
 Link: https://dummyjson.com/

@@ -12,8 +12,8 @@ const useBlogPostStore = defineStore("posts", {
       try {
         const apiUrl =
           this.currentLanguage === "khm"
-            ? "https://dummyjson.com/c/067f-de7a-4251-85e2"
-            : "https://dummyjson.com/c/7c17-2a0f-4bf7-b108";
+            ? "https://dummyjson.com/c/7f13-1be6-4085-b32a"
+            : "https://dummyjson.com/c/9673-bbf8-4724-9a59";
 
         const { data } = await axios.get(apiUrl);
         // console.log(data);
@@ -23,10 +23,10 @@ const useBlogPostStore = defineStore("posts", {
       }
     },
     setLanguage(language) {
-        this.currentLanguage = language; // Update the language in state
-        Cookies.set("lang", language, { expires: 7, path: "/" }); // Update cookie
-        this.getAllRepositories(); // Fetch posts based on the new language
-      },
+      this.currentLanguage = language; // Update the language in state
+      Cookies.set("lang", language, { expires: 7, path: "/" }); // Update cookie
+      this.getAllRepositories(); // Fetch posts based on the new language
+    },
   },
 });
 

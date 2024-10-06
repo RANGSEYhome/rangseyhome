@@ -5,11 +5,21 @@
         <header class="blog-post-header">
           <h2 class="title mb-2">{{ postSec.title }}</h2>
           <div class="meta mb-3">
-            <span class="date">{{ postSec.publishedDate }}</span
-            ><span class="time">{{ postSec.readTime }}</span
-            ><span class="comment"
-              ><a class="text-link" href="#">{{ postSec.comments }}</a></span
+            <span class="date">
+              {{ $t("Published") }}
+              <span v-if="postSec.publishedDate">{{
+                getRelativeDate(postSec.publishedDate)
+              }}</span>
+              <span v-else>N/A</span></span
             >
+            <span v-if="postSec.readTime > 1" class="time"
+              >{{ postSec.readTime }} {{ $t("ReadTimes") }}</span
+            ><span v-else>{{ $t("ReadTime") }}</span>
+            <!-- <span v-if="postSec.comments > 1" class="comment"
+              ><a class="text-link" href="#">{{ postSec.comments }} {{ $t("Comments") }}</a></span
+            ><span v-else class="comment"
+              ><a class="text-link" href="#">{{ postSec.comments }} {{ $t("Comment") }}</a></span
+            > -->
           </div>
         </header>
 
@@ -28,60 +38,57 @@
           <div v-html="postSec.content"></div>
         </div>
 
-        <nav class="blog-nav nav nav-justified my-5">
-          <a class="nav-link-prev nav-item nav-link rounded-left" href="#"
+        <!-- <nav class="blog-nav nav nav-justified my-5">
+          <router-link class="nav-link-prev nav-item nav-link rounded-left" :to="`previousItem.link`"
             >Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i
-          ></a>
-          <a class="nav-link-next nav-item nav-link rounded-right" href="#"
+          ></router-link>
+          <router-link class="nav-link-next nav-item nav-link rounded-right" to="#"
             >Next<i class="arrow-next fas fa-long-arrow-alt-right"></i
-          ></a>
-        </nav>
+          ></router-link>
+        </nav> -->
       </div>
       <!--//container-->
     </article>
-
-    <section class="promo-section theme-bg-light py-5 text-center">
-      <div class="container single-col-max-width">
-        <h2 class="title">Promo Section Heading</h2>
-        <p>
-          You can use this section to promote your side projects etc. Lorem
-          ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-          ligula eget dolor. Aenean massa.
-        </p>
-        <figure class="promo-figure">
-          <a href="https://made4dev.com" target="_blank"
-            ><img
-              class="img-fluid"
-              src="/assets/images/promo-banner.jpg"
-              alt="image"
-          /></a>
-        </figure>
-      </div>
-      <!--//container-->
-    </section>
-    <!--//promo-section-->
+    <Promotion></Promotion>
   </div>
   <!--//main-wrapper-->
 </template>
 
 <script>
+import Promotion from "@/components/PromotionPhoto.vue"
 import useBlogPostSpecStore from "@/stores/blog-post-spec";
 import { mapActions, mapState } from "pinia";
+import { formatDistanceToNow } from "date-fns";
+import Cookies from "js-cookie";
+import { km } from "date-fns/locale";
 
 export default {
+  components:{
+    Promotion,
+  },
   data() {
     return {
       loading: true,
+      currentLanguage: "khm", // Initialize with default language
     };
   },
   computed: {
-    ...mapState(useBlogPostSpecStore, ["postSec"]),
+    ...mapState(useBlogPostSpecStore, ["postSec", "previousItem"]),
   },
   methods: {
     ...mapActions(useBlogPostSpecStore, ["getAllRepositories"]),
+
+    getRelativeDate(dateString) {
+      const date = new Date(dateString);
+      if (Cookies.get("lang") === "en") {
+        return formatDistanceToNow(date, { addSuffix: true });
+      } else {
+        return formatDistanceToNow(date, { locale: km });
+      }
+    },
   },
   async mounted() {
-    await this.getAllRepositories(this.$route.params.id);
+    await this.getAllRepositories();
     this.loading = false; // Set loading to false once data is fetched
   },
 };

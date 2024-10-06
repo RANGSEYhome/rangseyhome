@@ -1,7 +1,5 @@
 // My Customized JS
-import Cookies from "js-cookie";
-import i18n from "@/i18n/main";
-import { tns } from "tiny-slider";
+
 
 // start toggle dark-mode
 export function setThemeFromCookie() {
@@ -37,8 +35,11 @@ export function setThemeFromCookie() {
 }
 // end toggle dark-mode
 
+
 // start toggle language
-// import store
+import router from "@/route";
+import Cookies from "js-cookie";
+import i18n from "@/i18n/main";
 import useBlogPostStore from "@/stores/blog-posts";
 import useTestsStore from "@/stores/testimonials";
 import useBlogPostSpecStore from "@/stores/blog-post-spec";
@@ -66,10 +67,19 @@ export function setLanguageFromCookie() {
     const newLang = i18n.global.locale === "en" ? "khm" : "en";
     updateLanguage(newLang, blogPostStore);
     updateLanguage(newLang, testStore);
-    // updateLanguage(newLang, blogPostSpec);
+
+    let currentRoute = router.currentRoute.value;
+    let link = currentRoute.params.id;
+    if (link == undefined) {
+      updateLanguageNull(newLang, blogPostSpec);
+    } else {
+      updateLanguage(newLang, blogPostSpec);
+    }
   });
 }
-
+function updateLanguageNull(lang, store) {
+  store.setLanguageNull(lang); // Update language in store and fetch posts
+}
 function updateLanguage(lang, store) {
   i18n.global.locale = lang; // Change the locale in i18n
   store.setLanguage(lang); // Update language in store and fetch posts
@@ -85,55 +95,10 @@ function updateButtonText(lang) {
 }
 // // end toggle language
 
-// export function setLanguageFromCookie() {
-//   const languageToggler = document.getElementById("language-toggle");
-//   const blogPostStore = useBlogPostStore();
-//   const testStore = useTestsStore();
-//   const blogPostSpec = useBlogPostSpecStore('about-remote-working');
-
-//   if (!languageToggler) {
-//     console.error("Language toggle not found!");
-//     return;
-//   }
-
-//   const savedLang = Cookies.get("lang") || "en";
-//   updateLanguage(savedLang, blogPostStore);
-//   updateLanguage(savedLang, testStore);
-//   updateLanguage(savedLang, blogPostSpec);
-
-//   languageToggler.removeEventListener("click", () => toggleLanguage(blogPostStore, testStore, blogPostSpec));
-//   languageToggler.addEventListener("click", () => toggleLanguage(blogPostStore, testStore, blogPostSpec));
-// }
-
-// function toggleLanguage(blogPostStore, testStore, blogPostSpec) {
-//   const newLang = i18n.global.locale === "en" ? "khm" : "en";
-//   updateLanguage(newLang, blogPostStore);
-//   updateLanguage(newLang, testStore);
-//   updateLanguage(newLang, blogPostSpec);
-// }
-
-// function updateLanguage(lang, store) {
-//   try {
-//     i18n.global.locale = lang;
-//     store.setLanguage(lang);
-//     updateButtonText(lang);
-//   } catch (error) {
-//     console.error("Error updating language:", error);
-//   }
-// }
-
-// function updateButtonText(lang) {
-//   const languageToggler = document.getElementById("language-toggle");
-//   if (languageToggler) {
-//     languageToggler.innerHTML =
-//       lang === "en"
-//         ? '<i class="fas fa-language me-2"></i> ភាសាខ្មែរ'
-//         : '<i class="fas fa-language me-2"></i> English';
-//   }
-// }
-
 
 // start initialize tiny slider
+import { tns } from "tiny-slider";
+
 export function initializeSlider() {
   const slider = tns({
     container: ".testimonial-carousel",

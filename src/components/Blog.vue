@@ -1,9 +1,9 @@
 <template>
-    <div class="main-wrapper">
-    <Subscription></Subscription>
+  <div class="main-wrapper">
+    <SubscriptionForm></SubscriptionForm>
     <section class="blog-list px-3 py-5 p-md-5">
       <div class="container single-col-max-width">
-        <div class="item mb-5" v-for="post, index, in posts" :key="index">
+        <div class="item mb-5" v-for="(post, index) in posts" :key="index">
           <div class="row g-3 g-xl-0">
             <div class="col-2 col-xl-3">
               <img
@@ -14,21 +14,35 @@
             </div>
             <div class="col">
               <h3 class="title mb-1">
-                <router-link class="text-link" :to="`/blog/${post.link}`"
-                  >{{ post.title }}</router-link
-                >
+                <router-link class="text-link" :to="`/blog/${post.link}`">{{
+                  post.title
+                }}</router-link>
               </h3>
               <div class="meta mb-1">
-                <span class="date">{{post.publishedDate}}</span
-                ><span class="time">{{post.readTime}}</span
-                ><span class="comment"
-                  ><a class="text-link" href="#">{{post.comments}}</a></span
-                >
+                {{ $t("Published") }}
+                <span v-if="post.publishedDate">{{
+                  getRelativeDate(post.publishedDate)
+                }}</span>
+                <span v-else>N/A</span>
+                <span v-if="post.readTime > 1" class="time"
+                  >{{ post.readTime }} {{ $t("ReadTimes") }}</span
+                ><span v-else>{{ $t("ReadTime") }}</span>
+                <!-- <span v-if="post.comments > 1" class="comment"
+                  ><a class="text-link" href="#"
+                    >{{ post.comments }} {{ $t("Comments") }}</a
+                  ></span
+                ><span v-else class="comment"
+                  ><a class="text-link" href="#"
+                    >{{ post.comments }} {{ $t("Comment") }}</a
+                  ></span
+                > -->
               </div>
               <div class="intro">
-                {{post.intro}}
+                {{ post.intro }}
               </div>
-              <router-link class="text-link" :to="`/blog/${post.link}`">{{$t('ReadMore')}} &rarr;</router-link>
+              <router-link class="text-link" :to="`/blog/${post.link}`"
+                >{{ $t("ReadMore") }} &rarr;</router-link
+              >
             </div>
             <!--//col-->
           </div>
@@ -53,15 +67,18 @@
 </template>
 
 <script>
-import Subscription from "@/components/Subscription.vue";
+import SubscriptionForm from "@/components/SubscriptionForm.vue";
 import useBlogPostStore from "@/stores/blog-posts";
+import Cookies from "js-cookie";
 import { mapActions, mapState } from "pinia";
+import { formatDistanceToNow } from "date-fns";
+import { km } from "date-fns/locale";
 
-export default{
-  components:{
-    Subscription,
+export default {
+  components: {
+    SubscriptionForm,
   },
-    async created() {
+  async created() {
     await this.getAllRepositories();
     // console.log("Get posts");
     // console.log(this.posts);
@@ -71,6 +88,15 @@ export default{
   },
   methods: {
     ...mapActions(useBlogPostStore, ["getAllRepositories"]),
+
+    getRelativeDate(dateString) {
+      const date = new Date(dateString);
+      if (Cookies.get("lang") === "en") {
+        return formatDistanceToNow(date, { addSuffix: true });
+      } else {
+        return formatDistanceToNow(date, { locale: km });
+      }
+    },
   },
-}
+};
 </script>

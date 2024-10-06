@@ -36,7 +36,7 @@
         <!--//row-->
         <div class="text-center py-3">
           <router-link to="/blog" class="btn btn-primary"
-            ><i class="fas fa-arrow-alt-circle-right me-2"></i>{{$t('ReadBlog')}}</router-link
+            ><i class="fas fa-arrow-alt-circle-right me-2"></i>{{$t('ReadMoreBlog')}}</router-link
           >
         </div>
       </div>
