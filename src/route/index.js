@@ -25,7 +25,8 @@ const routes = [
     children: [{ path: ":id", component: BlogPost}],
   },
   { path: "/about-project", component: AboutProject },
-  { path : '/:pathMatch(.*)*', component:NotFound}
+  { path : '/:pathMatch(.*)*', component: NotFound},
+  { path : '/*', component: NotFound},
 ];
 
 // create a router object, passing an object with history and routes properties
