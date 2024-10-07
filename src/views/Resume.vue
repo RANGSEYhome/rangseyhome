@@ -2,9 +2,9 @@
   <div class="main-wrapper">
     <section class="cta-section theme-bg-light py-5">
       <div class="container text-center single-col-max-width">
-        <h2 class="heading mb-3">{{ $t('OnlineCv') }}</h2>
+        <h2 class="heading mb-3">{{ $t("OnlineCv") }}</h2>
         <button @click="downloadPDF" class="btn btn-primary">
-          <i class="fas fa-file-pdf me-2"></i>{{$t('DownloadCv')}}
+          <i class="fas fa-file-pdf me-2"></i>{{ $t("DownloadCv") }}
         </button>
       </div>
       <!--//container-->
@@ -280,7 +280,8 @@
                       resulting in increased organic search traffic and a
                       growing readership. Designed an intuitive user interface
                       and comment section to foster interaction and community
-                      engagement. Learn more, <a
+                      engagement. Learn more,
+                      <a
                         href="https://rangseyhome.blogspot.com/"
                         target="_blank"
                         class="theme-link"
@@ -464,14 +465,19 @@
       </article>
     </div>
     <!--//container-->
+    <PromotionText></PromotionText>
   </div>
 </template>
 
 <script>
+import PromotionText from "@/components/PromotionText.vue";
 import html2pdf from "html2pdf.js";
 import Cookies from "js-cookie";
 
 export default {
+  components: {
+    PromotionText,
+  },
   methods: {
     // Download PDF
     downloadPDF() {

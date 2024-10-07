@@ -39,7 +39,6 @@
           <div class="col-md-5 col-lg-5">
             <img
               class="profile-image img-fluid mb-3 mb-lg-0 me-md-0"
-              style="filter: grayscale(100%)"
               src="assets/images/profile-lg.jpg"
               alt=""
             />
@@ -83,6 +82,7 @@
     <div class="container"><hr /></div>
 
     <BlogCard></BlogCard>
+    <PromotionText></PromotionText>
   </div>
   <!--//main-wrapper-->
 </template>
@@ -91,12 +91,14 @@
 import Testimonials from "@/components/Testimonials.vue";
 import BlogCard from "@/components/BlogCard.vue";
 import Skills from "@/components/Skills.vue";
+import PromotionText from "@/components/PromotionText.vue";
 
 export default {
   components: {
     Testimonials,
     BlogCard,
     Skills,
+    PromotionText,
   },
 };
 </script>

@@ -47,10 +47,14 @@ const messages ={
         ReadTimes: "mins read",
         Comment: "comment",
         Comments: "comments",
+        Previous: "Previous",
+        Next: "Next",
+        NoPrevious: "No previous post available.",
+        NoNext: "No next post available.",
         // Subcription
         SubsHeading: "New Updated Articles",
         SubsDesc: "Welcome to my blog. Subscribe and get my latest blog post in your inbox.",
-        SubsInput: "Enter email",
+        SubsInput: "Email",
         SubsButton: "Subscribe ",
         // Validation
         ReqName: "Name is required",
@@ -62,6 +66,12 @@ const messages ={
         SubSuccess: "Form Submitted Successfully!",
         // Promotion
         PromoDesc: "I write about software development, content creation, and marketing.",
+        WantMe: "Want me to help with your project?",
+        PromoTextDesc: "I empowering businesses through full-stack development, content creation, digital marketing, and graphic design —driving user engagement, optimizing online presence, and fostering sustainable growth.",
+        // 404
+        Opps: "Oops! You're lost.",
+        NotFound: "The page you are looking for was not found.",
+        BackHome: "Back to Homepage"
     },
     khm:{
         //Global
@@ -80,7 +90,7 @@ const messages ={
         // About
         ShortProf: "អ្នកអភិវឌ្ឍន៍កម្មវិធី (Full-stack developer), អ្នកសរសេរមាតិកា និងអ្នកធ្វើទីផ្សារ",
         AboutDesc1: "ខ្ញុំជាអ្នកជំនាញពហុអាជីពដែលមានឯកទេសក្នុងការអភិវឌ្ឍកម្មវិធី និងការបង្កើតមាតិកា។ ខ្ញុំសរសេរអំពីការអភិវឌ្ឍន៍កម្មវិធី ការបង្កើតមាតិកា និងទីផ្សារនៅលើ",
-        MyBlog: "ប្លុករបស់ខ្ញុំ",
+        MyBlog: "Blog របស់ខ្ញុំ",
         AboutDesc2: "ចង់ដឹងថា តើខ្ញុំអាចជួយដល់គម្រោងឬសេចក្ដីត្រូវការរបស់អ្នកដោយរបៀបណា? សូមមើល",
         MyOnlineCv: "ប្រវត្តិរូបរបស់ខ្ញុំ",
         ReadBlog: "អានអត្ថបទ",
@@ -100,7 +110,7 @@ const messages ={
         GetInTouch: "ទាក់ទងខ្ញុំ",
         Name: "ឈ្មោះ",
         Email: "អ៊ីម៉ែល",
-        EnterMessage: "វាយបញ្ចូលសាររបស់អ្នក",
+        EnterMessage: "សាររបស់អ្នក",
         SendNow: "ផ្ញើឥលូវ",
         // Blog
         ReadMore: "អានបន្ត",
@@ -109,21 +119,31 @@ const messages ={
         ReadTimes: "នាទី អាន",
         Comment: "មតិយោបល់",
         Comments: "មតិយោបល់",
+        Previous: "អត្ថបទមុន",
+        Next: "អត្ថបទបន្ទាប់",
+        NoPrevious: "អត្ថបទមុនមិនមានទេ",
+        NoNext: "អត្ថបទបន្ទាប់មិនមានទេ",
         // Subcription
         SubsHeading: "អត្ថបទចុះផ្សាយថ្មីៗ",
-        SubsDesc: "សូមស្វាគមន៍មកកាន់ប្លុករបស់ខ្ញុំ! ភ្ជាប់ និងទទួលបានអត្ថបទចុងក្រោយបំផុតរបស់ខ្ញុំ នៅក្នុងប្រអប់សំបុត្ររបស់អ្នក។",
-        SubsInput: "បញ្ចូលអាសយដ្ឋានអ៊ីម៉ែល",
+        SubsDesc: "សូមស្វាគមន៍មកកាន់ Blog របស់ខ្ញុំ! ភ្ជាប់ និងទទួលបានអត្ថបទចុងក្រោយបំផុតរបស់ខ្ញុំ នៅក្នុងប្រអប់សំបុត្ររបស់អ្នក។",
+        SubsInput: "អ៊ីម៉ែល",
         SubsButton: "ភ្ជាប់ ",
         // Validation
-        ReqName: "ត្រូវការឲ្យបំពេញឈ្មោះ",
-        ReqEmail: "ត្រូវការឲ្យបំពេញអ៊ីម៉ែល",
-        ReqMessage: "ត្រូវការឲ្យបំពេញសារ",
-        InvEmail: "អ៊ីម៉ែលមិនត្រឹមត្រូវ",
+        ReqName: "សូមបំពេញឈ្មោះរបស់អ្នក",
+        ReqEmail: "សូមបំពេញអ៊ីម៉ែលរបស់អ្នក",
+        ReqMessage: "សូមបំពេញសាររបស់អ្នក",
+        InvEmail: "អ៊ីម៉ែលរបស់អ្នកពុំត្រឹមត្រូវទេ",
         FixError: "សូមកែតម្រូវកំហុសឆ្គងមុនពេលបញ្ជូនម្ដងទៀត!",
         SubFail: "បរាជ័យ សូមព្យាយាមម្ដងទៀត!",
         SubSuccess: "ជោគជ័យ!",
         // Promotion
         PromoDesc: "ខ្ញុំសរសេរអំពីការអភិវឌ្ឍន៍កម្មវិធី ការបង្កើតមាតិកា និងទីផ្សារ។",
+        WantMe: "ចាប់អារម្មណ៍ទាក់ទងខ្ញុំសម្រាប់ការងារ?",
+        PromoTextDesc: "ខ្ញុំជួយដល់អាជីវកម្ម តាមរយៈការអភិវឌ្ឍកម្មវិធី ការបង្កើតមាតិកា ទីផ្សារឌីជីថល និងការរចនាក្រាហ្វិកដែលជំរុញឱ្យមានការចូលរួមរបស់អ្នកប្រើប្រាស់ ការបង្កើនប្រសិទ្ធភាពនិងវត្តមានតាមប្រព័ន្ធអនឡាញ និងជំរុញកំណើនប្រកបដោយនិរន្តរភាព។",
+        // 404
+        Opps: "សូមអភ័យទោស ទំព័រដែលអ្នកទស្សនាពុំត្រឹមត្រូវទេ!",
+        NotFound: "រកមិនឃើញទំព័រដែលអ្នកស្វែងរកទេ។",
+        BackHome: "ត្រលប់ទៅទំព័រដើម"
     },
 }
 

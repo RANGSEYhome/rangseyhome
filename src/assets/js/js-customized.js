@@ -1,6 +1,7 @@
 // My Customized JS
 
 
+
 // start toggle dark-mode
 export function setThemeFromCookie() {
   const modeToggler = document.getElementById("darkmode");
@@ -36,13 +37,12 @@ export function setThemeFromCookie() {
 // end toggle dark-mode
 
 
+
 // start toggle language
-import router from "@/route";
 import Cookies from "js-cookie";
 import i18n from "@/i18n/main";
 import useBlogPostStore from "@/stores/blog-posts";
 import useTestsStore from "@/stores/testimonials";
-import useBlogPostSpecStore from "@/stores/blog-post-spec";
 
 export function setLanguageFromCookie() {
   const languageToggler = document.getElementById("language-toggle");
@@ -50,7 +50,6 @@ export function setLanguageFromCookie() {
   // Get the store instance
   const blogPostStore = useBlogPostStore();
   const testStore = useTestsStore();
-  const blogPostSpec = useBlogPostSpecStore();
 
   if (!languageToggler) {
     console.error("Language toggle not found!");
@@ -61,24 +60,12 @@ export function setLanguageFromCookie() {
   const savedLang = Cookies.get("lang") || "en";
   updateLanguage(savedLang, blogPostStore);
   updateLanguage(savedLang, testStore);
-  // updateLanguage(savedLang, blogPostSpec);
 
   languageToggler.addEventListener("click", () => {
     const newLang = i18n.global.locale === "en" ? "khm" : "en";
     updateLanguage(newLang, blogPostStore);
     updateLanguage(newLang, testStore);
-
-    let currentRoute = router.currentRoute.value;
-    let link = currentRoute.params.id;
-    if (link == undefined) {
-      updateLanguageNull(newLang, blogPostSpec);
-    } else {
-      updateLanguage(newLang, blogPostSpec);
-    }
   });
-}
-function updateLanguageNull(lang, store) {
-  store.setLanguageNull(lang); // Update language in store and fetch posts
 }
 function updateLanguage(lang, store) {
   i18n.global.locale = lang; // Change the locale in i18n
@@ -94,6 +81,7 @@ function updateButtonText(lang) {
       : '<i class="fas fa-language me-2"></i> English';
 }
 // // end toggle language
+
 
 
 // start initialize tiny slider
@@ -130,8 +118,8 @@ export function initializeSlider() {
 // end initialize tiny slider
 
 
+
 // start initialize isotope layout
-// import required dependencies
 import Isotope from "isotope-layout";
 import imagesLoaded from "imagesloaded";
 

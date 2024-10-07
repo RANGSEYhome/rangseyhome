@@ -26,7 +26,7 @@
             <div class="col-12 col-md-7 col-lg-8 col-xxl-9">
               <div class="client-info">
                 <h3 class="client-name font-weight-bold mb-4">
-                  Kheang Kim Ang (Instructor)
+                  Submited to Instructor: Kheang Kim Ang
                 </h3>
                 <ul class="client-meta list-unstyled">
                   <li class="mb-2">
@@ -49,7 +49,20 @@
                   <li class="mb-2">At least 5 pages (with route)</li>
                   <li class="mb-2">Call API</li>
                   <li class="mb-2">Translate UI elements</li>
-                  <li class="mb-2">Deploy to Netlify</li>
+                  <li class="mb-2">
+                    <a
+                      href="https://rangsey-portfolio.netlify.app/"
+                      target="_blank"
+                      >Deploy to Netlify</a
+                    >
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      href="https://github.com/RANGSEYhome/rangseyhome"
+                      target="_blank"
+                      >Link to Github repository</a
+                    >
+                  </li>
                 </ul>
               </div>
               <!--//client-info-->
@@ -224,21 +237,12 @@
               translation, form validation, relative date display, resume
               download features, and Netlify deployment.
             </p>
-            <div class="row mt-5">
-              <div class="col-12 col-lg-6 mb-5">
-                <img
-                  class="img-fluid rounded"
-                  src="assets/images/project/blog-post-1.png"
-                  alt="image"
-                />
-              </div>
-              <div class="col-12 col-lg-6 mb-5">
-                <img
-                  class="img-fluid rounded"
-                  src="assets/images/project/blog-post-2.png"
-                  alt="image"
-                />
-              </div>
+            <div class="col-12 mb-5">
+              <img
+                class="img-fluid rounded"
+                src="assets/images/project/dark-mode.png"
+                alt="image"
+              />
             </div>
             <div class="row mt-5">
               <div class="col-12 col-lg-6 mb-5">
@@ -256,6 +260,36 @@
                 />
               </div>
             </div>
+            <div class="col-12 mb-5">
+              <img
+                class="img-fluid rounded"
+                src="assets/images/project/form-validation.png"
+                alt="image"
+              />
+            </div>
+            <div class="row mt-5">
+              <div class="col-12 col-lg-6 mb-5">
+                <img
+                  class="img-fluid rounded"
+                  src="assets/images/project/blog-post-1.png"
+                  alt="image"
+                />
+              </div>
+              <div class="col-12 col-lg-6 mb-5">
+                <img
+                  class="img-fluid rounded"
+                  src="assets/images/project/blog-post-2.png"
+                  alt="image"
+                />
+              </div>
+            </div>
+            <div class="col-12 mb-5">
+              <img
+                class="img-fluid rounded"
+                src="assets/images/project/previous-next-post.png"
+                alt="image"
+              />
+            </div>
             <p>List of important features in this project:</p>
             <ul>
               <li>
@@ -268,13 +302,18 @@
                 remember their preferred language settings.
               </li>
               <li>
-                Form Validation with Yup: Employs Yup for efficient and
-                expressive object schema validation, ensuring accurate user
-                input and data integrity.
-              </li>
-              <li>
                 API Integration: Incorporates dummy JSON data to demonstrate API
                 consumption and data handling.
+              </li>
+              <li>
+                Relative Date Display for Blog Posts: Uses Date-fns to present
+                dates in a relative format, enhancing user experience and
+                understanding.
+              </li>
+              <li>
+                Blog Post Navigation: Allow user to navigate to previous blog
+                post and next blog post within the post they are currently
+                reading.
               </li>
               <li>
                 Resume Download with Html2pdf.js: Enables users to download a
@@ -282,9 +321,9 @@
                 providing easy access to essential information.
               </li>
               <li>
-                Relative Date Display for blog posts: Uses Date-fns to present
-                dates in a relative format, enhancing user experience and
-                understanding.
+                Form Validation with Yup: Employs Yup for efficient and
+                expressive object schema validation, ensuring accurate user
+                input and data integrity.
               </li>
               <li>
                 Netlify Deployment: Successfully deployed on Netlify, ensuring
@@ -449,13 +488,13 @@
         </div>
       </div>
     </section>
+    <PromotionText></PromotionText>
   </div>
   <!--//main-wrapper-->
 </template>
 
 <script>
-import PhotoSlide from "@/components/PhotoSlide.vue";
-import Promotion from "@/components/PromotionPhoto.vue";
+import PromotionText from "@/components/PromotionText.vue";
 import { initializeIsotope } from "@/assets/js/js-customized";
 import hljs from "highlight.js";
 import Cookies from "js-cookie";
@@ -464,8 +503,7 @@ import { km } from "date-fns/locale";
 
 export default {
   components: {
-    Promotion,
-    PhotoSlide,
+    PromotionText,
   },
   data() {
     return {

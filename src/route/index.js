@@ -10,8 +10,8 @@ const Contact = () => import("@/views/Contact.vue");
 const BlogHome = () => import("@/views/BlogHome.vue");
 const Blog = () => import("@/views/Blog.vue");
 const BlogPost = () => import("@/views/BlogPost.vue");
-
 const AboutProject = () => import("@/views/AboutProject.vue");
+const NotFound = () => import('@/components/NotFound.vue')
 
 // define the paths and their corresponding components
 const routes = [
@@ -25,6 +25,7 @@ const routes = [
     children: [{ path: ":id", component: BlogPost}],
   },
   { path: "/about-project", component: AboutProject },
+  { path : '/:pathMatch(.*)*', component:NotFound}
 ];
 
 // create a router object, passing an object with history and routes properties

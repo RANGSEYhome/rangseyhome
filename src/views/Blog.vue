@@ -1,3 +1,3 @@
 <template>
-  <router-view></router-view>
+  <router-view :key="$route.params.id"></router-view>
 </template>
