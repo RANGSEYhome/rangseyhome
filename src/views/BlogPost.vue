@@ -101,10 +101,10 @@ export default {
     },
   },
   created() {
-    useBlogPostStore().setCurrentAndPreviousPost();
+    useBlogPostStore().setCurrentAndPreviousPost(this.$route.params.id);
   },
   beforeRouteUpdate(to, from, next) {
-    useBlogPostStore().setCurrentAndPreviousPost(); // Update post data
+    useBlogPostStore().setCurrentAndPreviousPost(this.$route.params.id); // Update post data
     next(); // Confirm navigation
   },
   methods: {
