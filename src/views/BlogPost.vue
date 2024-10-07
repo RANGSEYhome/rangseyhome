@@ -133,11 +133,6 @@ export default {
     },
   },
   async mounted() {
-    // Load the theme from the environment variable
-    const defaultTheme = process.env.VUE_APP_DEFAULT_THEME || '/assets/css/theme-1.css';
-    console.log('Loading theme:', defaultTheme);
-    changeTheme(defaultTheme);
-    
     await this.getAllRepositories();
     this.loading = false; // Set loading to false once data is fetched
   },

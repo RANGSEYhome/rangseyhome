@@ -23,7 +23,8 @@ const routes = [
     children: [{ path: ":id", component: BlogPost }],
   },
   { path: "/about-project", component: AboutProject },
-  { path: '/:pathMatch(.*)*', component: NotFound }, // Catch-all for 404
+  { path: '/:pathMatch(.*)*', component: NotFound },
+  { path: '/blog/:pathMatch(.*)*', component: NotFound },
 ];
 
 // Create a router instance
