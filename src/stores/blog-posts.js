@@ -7,6 +7,7 @@ const useBlogPostStore = defineStore("posts", {
   state: () => ({
     posts: [],
     currentPost: [],
+    currentPostIndex: "",
     previousPost: [],
     nextPost: [],
     currentLanguage: "en", // Initialize with default language
@@ -16,8 +17,8 @@ const useBlogPostStore = defineStore("posts", {
       try {
         const apiUrl =
           this.currentLanguage === "khm"
-            ? "https://dummyjson.com/c/7f13-1be6-4085-b32a"
-            : "https://dummyjson.com/c/9673-bbf8-4724-9a59";
+            ? `${process.env.VUE_APP_API_URL}${process.env.VUE_APP_ENDPOINT_BLOGPOSTS_KH}`
+            : `${process.env.VUE_APP_API_URL}${process.env.VUE_APP_ENDPOINT_BLOGPOSTS_EN}`;
 
         const { data } = await axios.get(apiUrl);
         // console.log(data);
@@ -32,20 +33,11 @@ const useBlogPostStore = defineStore("posts", {
       Cookies.set("lang", language, { expires: 7, path: "/" }); // Update cookie
       this.getAllRepositories(); // Fetch posts based on the new language
     },
-
     setCurrentAndPreviousPost() {
       let currentRoute = router.currentRoute.value;
-      let link = "";
-
-      try {
-        link = currentRoute.params.id; // Return the ID parameter
-        // console.log(link);
-      } catch {
-        link = this.$route.params.id;
-        // console.log(link);
-      }
-
+      const link = currentRoute.params.id; // Return the ID parameter
       const index = this.posts.findIndex((post) => post.link === link);
+      this.currentPostIndex = index;
       if (index !== -1) {
         this.currentPost = this.posts[index];
         this.previousPost = this.posts[index - 1] || null; // Get the previous post if it exists

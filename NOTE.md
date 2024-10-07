@@ -31,3 +31,4 @@ Link: https://dummyjson.com/
 test deployment (fix env, api direct url) 2024-10-04
 first release (first release, test env) v.1.0 2024-10-06
 v1.1 (add more features over the first release, clean up code, and attempt to check env and api) 2024-10-07
+v.1.2 (fix errors: refresh page and env api)

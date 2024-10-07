@@ -61,7 +61,7 @@
             <div class="col-12 col-md-3 col-xl-2 text-center">
               <img
                 class="resume-profile-image mb-3 mb-md-0 me-md-5 ms-md-0 rounded mx-auto"
-                src="assets/images/resume-profile.png"
+                src="/assets/images/resume-profile.png"
                 alt="image"
               />
             </div>

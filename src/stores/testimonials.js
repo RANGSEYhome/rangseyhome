@@ -12,8 +12,8 @@ const useTestsStore = defineStore("testimonials", {
       try {
         const apiUrl =
           this.currentLanguage === "khm"
-            ? "https://dummyjson.com/c/a2b6-c5a0-4484-bf28"
-            : "https://dummyjson.com/c/ebe8-59ec-419d-905d";
+            ? `${process.env.VUE_APP_API_URL}${process.env.VUE_APP_ENDPOINT_TESTIMONIALS_KH}`
+            : `${process.env.VUE_APP_API_URL}${process.env.VUE_APP_ENDPOINT_TESTIMONIALS_EN}`;
 
         const { data } = await axios.get(apiUrl);
         // console.log(data);

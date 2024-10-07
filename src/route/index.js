@@ -24,7 +24,6 @@ const routes = [
   },
   { path: "/about-project", component: AboutProject },
   { path: '/:pathMatch(.*)*', component: NotFound },
-  { path: '/blog/:pathMatch(.*)*', component: NotFound },
 ];
 
 // Create a router instance

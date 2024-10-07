@@ -1,7 +1,5 @@
 // My Customized JS
 
-
-
 // start toggle dark-mode
 export function setThemeFromCookie() {
   const modeToggler = document.getElementById("darkmode");
@@ -35,8 +33,6 @@ export function setThemeFromCookie() {
   });
 }
 // end toggle dark-mode
-
-
 
 // start toggle language
 import Cookies from "js-cookie";
@@ -82,8 +78,6 @@ function updateButtonText(lang) {
 }
 // // end toggle language
 
-
-
 // start initialize tiny slider
 import { tns } from "tiny-slider";
 
@@ -116,8 +110,6 @@ export function initializeSlider() {
   });
 }
 // end initialize tiny slider
-
-
 
 // start initialize isotope layout
 import Isotope from "isotope-layout";
@@ -153,14 +145,12 @@ export function initializeIsotope() {
 }
 // end initialize isotope layout
 
-
-
 // Function to change the theme
 export function changeTheme(themePath) {
-  const themeStyleLink = document.getElementById('theme-style');
+  const themeStyleLink = document.getElementById("theme-style");
   if (themeStyleLink) {
-      themeStyleLink.href = themePath;
+    themeStyleLink.href = themePath;
   } else {
-      console.error('Theme style link element not found!');
+    console.error("Theme style link element not found!");
   }
 }

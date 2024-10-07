@@ -39,7 +39,7 @@
           <div class="col-md-5 col-lg-5">
             <img
               class="profile-image img-fluid mb-3 mb-lg-0 me-md-0"
-              src="assets/images/profile-lg.jpg"
+              src="/assets/images/profile-lg.jpg"
               alt=""
             />
           </div>

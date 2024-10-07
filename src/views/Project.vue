@@ -20,7 +20,7 @@
             <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
               <img
                 class="project-thumb img-fluid rounded"
-                src="assets/images/project/project-3.jpg"
+                src="/assets/images/project/project-3.jpg"
                 alt=""
               />
             </div>

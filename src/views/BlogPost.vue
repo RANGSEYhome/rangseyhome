@@ -83,7 +83,6 @@ import { mapActions, mapState } from "pinia";
 import { formatDistanceToNow } from "date-fns";
 import Cookies from "js-cookie";
 import { km } from "date-fns/locale";
-import { changeTheme } from "@/assets/js/js-customized";
 
 export default {
   components: {
@@ -96,13 +95,19 @@ export default {
     };
   },
   computed: {
-    ...mapState(useBlogPostStore, ["currentPost", "nextPost", "previousPost"]),
+    ...mapState(useBlogPostStore, [
+      "currentPostIndex",
+      "currentPost",
+      "nextPost",
+      "previousPost",
+    ]),
     currentId() {
-      return parseInt(this.$route.params.id); // Assuming id is a number
+      return parseInt(this.$route.params.id);
     },
   },
   created() {
     useBlogPostStore().setCurrentAndPreviousPost();
+    this.checkPost();
   },
   beforeRouteUpdate(to, from, next) {
     useBlogPostStore().setCurrentAndPreviousPost(); // Update post data
@@ -121,20 +126,27 @@ export default {
     },
     goToPreviousPost() {
       if (this.previousPost) {
-        // console.log("Navigating to:", this.previousPost.link); // Debugging line
+        // console.log("Navigating to:", this.previousPost.link);
         this.$router.push(`/blog/${this.previousPost.link}`); // Programmatic navigation
       }
     },
     goToNextPost() {
       if (this.nextPost) {
-        // console.log("Navigating to next:", this.nextPost.link); // Debugging line
+        // console.log("Navigating to next:", this.nextPost.link);
         this.$router.push(`/blog/${this.nextPost.link}`); // Programmatic navigation
       }
     },
-  },
-  async mounted() {
-    await this.getAllRepositories();
-    this.loading = false; // Set loading to false once data is fetched
+    checkPost() {
+      if (this.currentPostIndex == -1) {
+        this.$router.replace("/index.html");
+      } else {
+        this.fetchPost();
+      }
+    },
+    async fetchPost() {
+      await this.getAllRepositories();
+      this.loading = false;
+    },
   },
 };
 </script>

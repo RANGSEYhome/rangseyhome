@@ -117,7 +117,7 @@
 <script>
 // import my customized js
 import { setThemeFromCookie, setLanguageFromCookie } from "@/assets/js/js-customized";
-import SocialListRoundBg from "./SocialListRoundBg.vue";
+import SocialListRoundBg from "@/components/SocialListRoundBg.vue";
 
 export default {
   components:{

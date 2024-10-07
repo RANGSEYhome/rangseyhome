@@ -18,7 +18,7 @@
             <div class="col-md-5 col-lg-4 col-xxl-3 d-none d-md-block">
               <img
                 class="project-thumb img-fluid rounded"
-                src="assets/images/project/project-4.jpg"
+                src="/assets/images/project/project-4.jpg"
                 alt=""
               />
             </div>
@@ -240,7 +240,7 @@
             <div class="col-12 mb-5">
               <img
                 class="img-fluid rounded"
-                src="assets/images/project/dark-mode.png"
+                src="/assets/images/project/dark-mode.png"
                 alt="image"
               />
             </div>
@@ -248,14 +248,14 @@
               <div class="col-12 col-lg-6 mb-5">
                 <img
                   class="img-fluid rounded"
-                  src="assets/images/project/cv-1.png"
+                  src="/assets/images/project/cv-1.png"
                   alt="image"
                 />
               </div>
               <div class="col-12 col-lg-6 mb-5">
                 <img
                   class="img-fluid rounded"
-                  src="assets/images/project/cv-2.png"
+                  src="/assets/images/project/cv-2.png"
                   alt="image"
                 />
               </div>
@@ -263,7 +263,7 @@
             <div class="col-12 mb-5">
               <img
                 class="img-fluid rounded"
-                src="assets/images/project/form-validation.png"
+                src="/assets/images/project/form-validation.png"
                 alt="image"
               />
             </div>
@@ -271,14 +271,14 @@
               <div class="col-12 col-lg-6 mb-5">
                 <img
                   class="img-fluid rounded"
-                  src="assets/images/project/blog-post-1.png"
+                  src="/assets/images/project/blog-post-1.png"
                   alt="image"
                 />
               </div>
               <div class="col-12 col-lg-6 mb-5">
                 <img
                   class="img-fluid rounded"
-                  src="assets/images/project/blog-post-2.png"
+                  src="/assets/images/project/blog-post-2.png"
                   alt="image"
                 />
               </div>
@@ -286,7 +286,7 @@
             <div class="col-12 mb-5">
               <img
                 class="img-fluid rounded"
-                src="assets/images/project/previous-next-post.png"
+                src="/assets/images/project/previous-next-post.png"
                 alt="image"
               />
             </div>
@@ -410,7 +410,7 @@
           <figure class="blog-banner">
             <img
               class="img-fluid"
-              src="assets/images/blog/blog-post-banner.jpg"
+              src="/assets/images/blog/blog-post-banner.jpg"
               alt="image"
             />
             <figcaption class="mt-2 text-center image-caption">
@@ -474,7 +474,7 @@
             <div class="source-holder">
               <div class="source-profile">
                 <img
-                  src="assets/images/clients/kheang-kim-ang.jpg"
+                  src="/assets/images/clients/kheang-kim-ang.jpg"
                   alt="image"
                   class="rounded-circle"
                 />
