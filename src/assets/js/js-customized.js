@@ -152,3 +152,15 @@ export function initializeIsotope() {
   });
 }
 // end initialize isotope layout
+
+
+
+// Function to change the theme
+export function changeTheme(themePath) {
+  const themeStyleLink = document.getElementById('theme-style');
+  if (themeStyleLink) {
+      themeStyleLink.href = themePath;
+  } else {
+      console.error('Theme style link element not found!');
+  }
+}

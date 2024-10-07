@@ -4,23 +4,16 @@ import { createApp } from 'vue'
 import App from './App.vue'
 // import application's router configuration
 import router from './route'
-// import customized css
+// import customized css and script
 import './assets/css/css-customized.css'
+import { changeTheme } from "@/assets/js/js-customized";
 // import i18n
 import i18n from './i18n/main.js'
 
 // import store
 import pinia from './stores'
 
-// Function to change the theme
-function changeTheme(themePath) {
-    const themeStyleLink = document.getElementById('theme-style');
-    if (themeStyleLink) {
-        themeStyleLink.href = themePath;
-    } else {
-        console.error('Theme style link element not found!');
-    }
-}
+
 // Load the theme from the environment variable
 const defaultTheme = process.env.VUE_APP_DEFAULT_THEME || 'assets/css/theme-1.css';
 console.log('Loading theme:', defaultTheme); // Debugging line

@@ -83,6 +83,7 @@ import { mapActions, mapState } from "pinia";
 import { formatDistanceToNow } from "date-fns";
 import Cookies from "js-cookie";
 import { km } from "date-fns/locale";
+import { changeTheme } from "@/assets/js/js-customized";
 
 export default {
   components: {
@@ -132,6 +133,11 @@ export default {
     },
   },
   async mounted() {
+    // Load the theme from the environment variable
+    const defaultTheme = process.env.VUE_APP_DEFAULT_THEME || '/assets/css/theme-1.css';
+    console.log('Loading theme:', defaultTheme);
+    changeTheme(defaultTheme);
+    
     await this.getAllRepositories();
     this.loading = false; // Set loading to false once data is fetched
   },
