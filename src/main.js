@@ -15,7 +15,7 @@ import pinia from './stores'
 
 
 // Load the theme from the environment variable
-const defaultTheme = process.env.VUE_APP_DEFAULT_THEME || '/assets/css/theme-1.css';
+const defaultTheme = process.env.VUE_APP_DEFAULT_THEME || '/assets/css/theme-6.css';
 // console.log('Loading theme:', defaultTheme); // Debugging line
 // console.log('Process Environment:', process.env); // Log all environment variables
 changeTheme(defaultTheme);

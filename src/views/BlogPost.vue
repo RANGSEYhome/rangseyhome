@@ -138,7 +138,7 @@ export default {
     },
     checkPost() {
       if (this.currentPostIndex == -1) {
-        this.$router.replace("/index.html");
+        this.$router.replace("/404.html");
       } else {
         this.fetchPost();
       }

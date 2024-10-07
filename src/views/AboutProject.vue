@@ -231,7 +231,7 @@
           </div>
           <div class="project-section mb-5">
             <h3 class="project-section-title">Project Features</h3>
-            <p>
+            <p class="mb-5">
               This portfolio website project is a Vue.js-based platform
               showcasing web development proficiency through API integration, UI
               translation, form validation, relative date display, resume
@@ -282,6 +282,13 @@
                   alt="image"
                 />
               </div>
+            </div>
+            <div class="col-12 mb-5">
+              <img
+                class="img-fluid rounded"
+                src="/assets/images/project/env-variables.png"
+                alt="image"
+              />
             </div>
             <div class="col-12 mb-5">
               <img
@@ -526,3 +533,20 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+img.rounded {
+    display: block; /* Ensure the image is treated as a block element */
+    margin: 8px auto; /* Center the image and add space around it */
+    border: 1px solid #007BFF; /* Add a colored border */
+    border-radius: 8px; /* Round the corners */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Add a transition effect */
+}
+
+img.rounded:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+</style>
