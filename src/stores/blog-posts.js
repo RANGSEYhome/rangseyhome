@@ -33,17 +33,17 @@ const useBlogPostStore = defineStore("posts", {
       this.getAllRepositories(); // Fetch posts based on the new language
     },
 
-    setCurrentAndPreviousPost(link) {
-      // let currentRoute = router.currentRoute.value;
-      // let link = "";
+    setCurrentAndPreviousPost() {
+      let currentRoute = router.currentRoute.value;
+      let link = "";
 
-      // try {
-      //   link = currentRoute.params.id; // Return the ID parameter
-      //   // console.log(link);
-      // } catch {
-      //   link = this.$route.params.id;
-      //   // console.log(link);
-      // }
+      try {
+        link = currentRoute.params.id; // Return the ID parameter
+        // console.log(link);
+      } catch {
+        link = this.$route.params.id;
+        // console.log(link);
+      }
 
       const index = this.posts.findIndex((post) => post.link === link);
       if (index !== -1) {
