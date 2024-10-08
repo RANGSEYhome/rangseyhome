@@ -34,6 +34,8 @@ export function setThemeFromCookie() {
 }
 // end toggle dark-mode
 
+
+
 // start toggle language
 import Cookies from "js-cookie";
 import i18n from "@/i18n/main";
@@ -78,6 +80,8 @@ function updateButtonText(lang) {
 }
 // // end toggle language
 
+
+
 // start initialize tiny slider
 import { tns } from "tiny-slider";
 
@@ -110,6 +114,8 @@ export function initializeSlider() {
   });
 }
 // end initialize tiny slider
+
+
 
 // start initialize isotope layout
 import Isotope from "isotope-layout";
@@ -145,6 +151,8 @@ export function initializeIsotope() {
 }
 // end initialize isotope layout
 
+
+
 // Function to change the theme
 export function changeTheme(themePath) {
   const themeStyleLink = document.getElementById("theme-style");
@@ -154,3 +162,41 @@ export function changeTheme(themePath) {
     console.error("Theme style link element not found!");
   }
 }
+
+
+
+// start toggleNavbar
+export function toggleNavbar() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navLinks = document.querySelectorAll("#navigation .nav-link");
+    const navbarCollapse = document.getElementById("navigation");
+
+    // Function to close the navbar
+    const closeNavbar = () => {
+      if (
+        !navbarToggler.classList.contains("collapsed") &&
+        navbarCollapse.classList.contains("show")
+      ) {
+        navbarToggler.click(); // Close the navbar
+      }
+    };
+
+    // Close the navbar on link clicks
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeNavbar);
+    });
+
+    // Close the navbar on toggler button click
+    navbarToggler.addEventListener("click", closeNavbar);
+
+    // Ensure it's collapsed on load
+    if (
+      !navbarToggler.classList.contains("collapsed") &&
+      navbarCollapse.classList.contains("show")
+    ) {
+      navbarToggler.click(); // Collapse if expanded
+    }
+  });
+}
+// end toggleNavbar

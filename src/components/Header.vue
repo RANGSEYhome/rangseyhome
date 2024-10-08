@@ -2,9 +2,9 @@
   <header class="header text-center">
     <div class="force-overflow">
       <h1 class="blog-name pt-lg-4 mb-0">
-        <router-link class="no-text-decoration" to="/"
-          >{{$t('BlogName')}}</router-link
-        >
+        <router-link class="no-text-decoration" to="/">{{
+          $t("BlogName")
+        }}</router-link>
       </h1>
 
       <nav class="navbar navbar-expand-lg navbar-dark">
@@ -20,7 +20,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div id="navigation" class="collapse navbar-collapse flex-column">
+        <div
+          id="navigation"
+          class="collapse navbar-collapse flex-column"
+        >
           <div class="profile-section pt-3 pt-lg-0">
             <img
               class="profile-image mb-3 rounded-circle mx-auto"
@@ -29,10 +32,11 @@
             />
 
             <div class="bio mb-3">
-              {{ $t('ShortBio') }}<br /><a class="text-link"
+              {{ $t("ShortBio") }}<br /><a
+                class="text-link"
                 href="https://bit.ly/m/rangsey"
                 target="_blank"
-                >{{$t('FindMoreMe')}}</a
+                >{{ $t("FindMoreMe") }}</a
               >
             </div>
             <!--//bio-->
@@ -42,15 +46,17 @@
           <!--//profile-section-->
 
           <ul class="navbar-nav flex-column text-start">
-            <li v-for="item, index, in navItems" :key="index" class="nav-item">
-              <router-link class="nav-link" :to="item.link" :class="{active : $route.path == item.link}"
-                ><i class="fas fa-user fa-fw me-2" :class="item.icon"></i>{{$t(item.text)}}<span
-                  class="sr-only"
-                  >(current)</span
-                ></router-link
+            <li v-for="(item, index) in navItems" :key="index" class="nav-item">
+              <router-link
+                class="nav-link"
+                :to="item.link"
+                :class="{ active: $route.path == item.link }"
+                ><i class="fas fa-user fa-fw me-2" :class="item.icon"></i
+                >{{ $t(item.text)
+                }}<span class="sr-only">(current)</span></router-link
               >
             </li>
-            
+
             <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -91,7 +97,7 @@
           <div class="dark-mode-toggle text-center w-100">
             <hr class="mb-4" />
             <h4 class="toggle-name mb-3">
-              <i class="fas fa-adjust me-1"></i>{{ $t('DarkMode') }}
+              <i class="fas fa-adjust me-1"></i>{{ $t("DarkMode") }}
             </h4>
             <input class="toggle" id="darkmode" type="checkbox" />
             <label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
@@ -101,9 +107,9 @@
           <div class="profile-section w-100">
             <hr class="mb-1" />
             <div class="bio mb-0">
-              <router-link class="text-link mb-0" to="/about-project"
-                >{{$t('ReadProj')}}</router-link
-              >
+              <router-link class="text-link mb-0" to="/about-project">{{
+                $t("ReadProj")
+              }}</router-link>
             </div>
           </div>
           <!--//read more about this project-->
@@ -116,15 +122,18 @@
 
 <script>
 // import my customized js
-import { setThemeFromCookie, setLanguageFromCookie } from "@/assets/js/js-customized";
+import {
+  setThemeFromCookie,
+  setLanguageFromCookie, toggleNavbar,
+} from "@/assets/js/js-customized";
 import SocialListRoundBg from "@/components/SocialListRoundBg.vue";
 
 export default {
-  components:{
+  components: {
     SocialListRoundBg,
   },
-  data(){
-    return{
+  data() {
+    return {
       navItems: [
         {
           text: "AboutMe",
@@ -146,12 +155,13 @@ export default {
           icon: "fa-blog",
           link: "/blog",
         },
-      ]
-    }
+      ],
+    };
   },
   mounted() {
     setThemeFromCookie();
     setLanguageFromCookie();
+    toggleNavbar();
   },
 };
 </script>
